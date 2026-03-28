@@ -16,7 +16,7 @@
 
 - Taylanne Castelo Branco Cavalcante
     1. Criação banco de dados
-    
+
 ------------------------------
 
 - Yngrind Guimarães Silva
@@ -24,7 +24,7 @@
 ------------------------------
 
 - Marcus Tavares Pires
-
+    1. PythonFake (gerador de dados)
 ------------------------------
 
 - Yara Fernandes Ribeiro
