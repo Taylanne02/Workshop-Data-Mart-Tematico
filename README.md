@@ -15,7 +15,8 @@
 # Contribuições
 
 - Taylanne Castelo Branco Cavalcante
-
+    1. Criação banco de dados
+    
 ------------------------------
 
 - Yngrind Guimarães Silva
