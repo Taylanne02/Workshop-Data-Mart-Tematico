@@ -3,8 +3,6 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("datamart_financas.db");
 
 db.serialize(() => {
-    // --- DIMENSÕES ---
-
     // Dimensão Cliente: Atributos demográficos e de crédito
     db.run(`
     CREATE TABLE IF NOT EXISTS dim_cliente (
