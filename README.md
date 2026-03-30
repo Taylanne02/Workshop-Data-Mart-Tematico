@@ -1,30 +1,40 @@
+# ✒️ Workshop Data Mart de Transações de Cartões de Crédito
+
+
+## 📖 Descrição
+
+
 # Integrantes
 
-- Taylanne Castelo Branco Cavalcante
-- Yngrind Guimarães Silva
-- Marcus Tavares Pires
-- Yara Fernandes Ribeiro
+* **Marcus Tavares Pires**
+* **Taylanne Castelo Branco Cavalcante**
+* **Yara Fernandes Ribeiro**
+* **Yngrind Guimarães Silva**
 
-# Explicando o tema
+## 📂 Estrutura do Projeto
 
-# Como executar
+## 🚀 Como Rodar o Projeto
+
+## 🧪 Perguntas de Negócio (Queries SQL Documentadas)
 
 
 
+## 👥 Desenvolvedores e suas Contribuições
 
-# Contribuições
+* **Marcus Tavares Pires**
+    * Geração dos dados com PythonFake
+------------------------------
 
-- Taylanne Castelo Branco Cavalcante
-    1. Criação banco de dados
+* **Taylanne Castelo Branco Cavalcante**
+    * Criação banco de dados
 
 ------------------------------
 
-- Yngrind Guimarães Silva
+* **Yara Fernandes Ribeiro**
+    * Criação da develop
+    * Organização do README
 
 ------------------------------
 
-- Marcus Tavares Pires
-    1. PythonFake (gerador de dados)
-------------------------------
 
-- Yara Fernandes Ribeiro
+* **Yngrind Guimarães Silva**  
