@@ -13,6 +13,14 @@
 
 ## 📂 Estrutura do Projeto
 
+## 📦 Dependências necessárias
+
+Para instalar todas as dependências necessárias, execute:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## 🚀 Como Rodar o Projeto
 
 1️⃣ Gerar os dados brutos
@@ -49,7 +57,8 @@ O script vai extrair, transformar e carregar os dados do CSV para o banco.
 ------------------------------
 
 * **Taylanne Castelo Branco Cavalcante**
-    * Criação da estrutura do banco de dados
+    * Criação do banco de dados
+    * Organização das dependências e instruções para execução do projeto 
 
 ------------------------------
 
@@ -58,6 +67,5 @@ O script vai extrair, transformar e carregar os dados do CSV para o banco.
     * Organização do README
 
 ------------------------------
-
 
 * **Yngrind Guimarães Silva**  
