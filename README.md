@@ -109,8 +109,6 @@ Perguntas de Negócio:
 4. Qual categoria de loja gera mais faturamento?
 5. Qual o valor médio das compras (ticket médio)?
 
-As consultas SQL correspondentes estão disponíveis no arquivo `sql/perguntas_negocio.sql`.
-
 As consultas SQL correspondentes estão no arquivo `sql/perguntas_negocio.sql`.
 
 Dashboard: 
