@@ -47,7 +47,109 @@ python etl.py
 
 O script vai extrair, transformar e carregar os dados do CSV para o banco.
 
+## 🔗 Conexão Supabase com Power BI via ODBC
+
+Pré-requisitos
+* Conta ativa no Supabase.
+* Power BI Desktop instalado (versão 64 bits recomendada).
+* Credenciais do banco de dados (Host, DB Name, User, Port, Password).
+
+🛠️ Passo 1: Download e Instalação do Driver
+   * Para que o Windows entenda a linguagem do PostgreSQL, precisamos do driver psqlODBC.
+
+	1- Acesse o repositório oficial: https://www.postgresql.org/ftp/odbc/releases/REL-18_00_0001-mimalloc/
+
+	2- Localize e baixe o arquivo: psqlodbc_x64.msi (Versão 64 bits).
+
+	3- Execute o instalador, clique em Next, aceite os termos e conclua a instalação padrão.
+
+⚙️ Passo 2: Configuração do DSN no Windows (ODBC)
+   * Agora vamos criar a "ponte" de conexão no sistema operacional.
+
+	1- No menu iniciar do Windows, pesquise por "Configurar Fontes de Dados ODBC (64 bits)" e abra-o.
+
+	2- Na aba DSN de Usuário, clique em Adicionar.
+
+	3- Selecione o driver PostgreSQL Unicode(x64) e clique em Concluir.
+
+	4- Na tela de configuração que abrir, preencha com os dados do seu Supabase:
+
+		- Data Source: Supabase_ODBC (ou o nome que preferir).
+
+		- Database: postgres.
+
+		- Server: O endereço do host (ex: aws-0-xxxx.pooler.supabase.com).
+
+		- Port: 5432 ou 6543.
+
+		- User: postgres.
+
+		- Password: Sua senha do banco de dados.
+
+
+📊 Passo 3: Conexão com Power BI Desktop
+	1- Abra o Power BI Desktop.
+
+	2- Vá em Obter Dados > Mais... > pesquise por ODBC.
+
+	3- No campo "Nome da fonte de dados (DSN)", selecione o nome que você criou (Supabase_ODBC).
+
+	4- Se o Power BI pedir credenciais novamente:
+
+		- Escolha a aba Banco de Dados.
+
+		- Digite o usuário (postgres) e sua senha.
+
+	5- No Navegador, selecione as tabelas desejadas (Fato_Transacoes, Dim_Cliente, etc.) e clique em Carregar.
+
 ## 🧪 Perguntas de Negócio (Queries SQL Documentadas)
+
+* **1. Como o faturamento varia ao longo do tempo?**
+  
+SELECT 
+    data_compra, 
+    SUM(valor_compra) AS faturamento_total
+FROM Fato_Transacoes
+GROUP BY data_compra
+ORDER BY data_compra;
+
+* **2. Quais cidades concentram maior número de transações?**
+  
+SELECT 
+    Dim_Cliente.cidade, 
+    COUNT(*) AS qtd_transacoes
+FROM Fato_Transacoes
+JOIN Dim_Cliente 
+    ON Fato_Transacoes.id_cliente = Dim_Cliente.id_cliente
+GROUP BY Dim_Cliente.cidade
+ORDER BY qtd_transacoes DESC;
+
+* **3. Quais cidades geram maior faturamento?**
+  
+SELECT 
+    Dim_Cliente.cidade, 
+    SUM(valor_compra) AS faturamento_total
+FROM Fato_Transacoes
+JOIN Dim_Cliente 
+    ON Fato_Transacoes.id_cliente = Dim_Cliente.id_cliente
+GROUP BY Dim_Cliente.cidade
+ORDER BY faturamento_total DESC;
+
+* **4. Qual categoria de loja gera mais faturamento?**
+SELECT 
+    Dim_Estabelecimento.categoria_loja, 
+    SUM(valor_compra) AS faturamento_total
+FROM Fato_Transacoes
+JOIN Dim_Estabelecimento 
+    ON Fato_Transacoes.id_estabelecimento = Dim_Estabelecimento.id_estabelecimento
+GROUP BY Dim_Estabelecimento.categoria_loja
+ORDER BY faturamento_total DESC;
+
+* **5. Qual o valor médio das compras (ticket médio)?**
+  
+SELECT 
+    AVG(valor_compra) AS ticket_medio
+FROM Fato_Transacoes;
 
 ## 👥 Desenvolvedores e suas Contribuições
 
@@ -58,7 +160,9 @@ O script vai extrair, transformar e carregar os dados do CSV para o banco.
 
 * **Taylanne Castelo Branco Cavalcante**
     * Criação da estrutura do banco de dados
-    * Criação power bi
+    * Criação das Dashboard com POWERBI
+    * Organização das dependências e instruções para execução do projeto
+    * Organização do passo a passo para conectar o Supabase ao Power BI usando ODBC
 
 ------------------------------
 
