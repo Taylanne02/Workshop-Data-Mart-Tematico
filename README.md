@@ -99,11 +99,19 @@ Isso vai gerar o arquivo datamart_cartao.db.
 
 3️ Executar o ETL
 ```bash
-cd ../etl
-python etl.py
+cd ..
+cd ../dados/database
+python supabase.py
 ```
 
 O script vai extrair, transformar e carregar os dados do CSV para o banco.
+
+4 Enviar tabelas preenchidas para o Supabase
+```bash
+cd ../etl
+python etl.py
+```
+Assim os arquivos estarão disponiveis online, no Supabase.
 
 ## Conexão Supabase com Power BI via ODBC
 
