@@ -9,7 +9,7 @@
 * **Marcus Tavares Pires**
 * **Taylanne Castelo Branco Cavalcante**
 * **Yara Fernandes Ribeiro**
-* **Yngrind Guimarães Silva**
+* **Yngrid Guimarães Silva**
 
 ## 📂 Estrutura do Projeto
 
@@ -57,15 +57,65 @@ O script vai extrair, transformar e carregar os dados do CSV para o banco.
 ------------------------------
 
 * **Taylanne Castelo Branco Cavalcante**
-    * Criação do banco de dados
-    * Organização das dependências e instruções para execução do projeto 
+    * Criação da estrutura do banco de dados
+    * Criação power bi
 
 ------------------------------
 
 * **Yara Fernandes Ribeiro**
     * Criação da develop
     * Organização do README
+    * Organização do supabase e conexão dele com o código e com o Power bi 
 
 ------------------------------
 
-* **Yngrind Guimarães Silva**  
+
+* **Yngrid Guimarães Silva**  
+    * Criação das perguntas
+    * Organização power bi
+    * Encrementação e alterações README
+
+------------------------------
+
+# Data Mart – Análise de Transações
+Este projeto tem como objetivo desenvolver um Data Mart dimensional para análise de transações financeiras, permitindo identificar padrões de consumo, comportamento de clientes e desempenho dos canais de pagamento.
+
+Tecnologias:
+- Python
+- SQLite
+- Power BI
+
+Modelo Dimensional: 
+O modelo segue o padrão Star Schema.
+
+Tabela Fato:
+- Fato_Transacoes
+
+Dimensões:
+- Dim_Cliente
+- Dim_Canal
+- Dim_Estabelecimento
+- Dim_Tempo
+
+Granularidade:
+Cada registro representa uma transação realizada por um cliente em um determinado canal, data e estabelecimento.
+
+ETL:
+Os dados foram extraídos de arquivos CSV, transformados utilizando Python e carregados em um banco SQLite estruturado em modelo dimensional.
+
+Perguntas de Negócio:
+1. Como o faturamento varia ao longo do tempo?
+2. Quais cidades concentram maior número de transações?
+3. Quais cidades geram maior faturamento?
+4. Qual categoria de loja gera mais faturamento?
+5. Qual o valor médio das compras (ticket médio)?
+
+As consultas SQL correspondentes estão no arquivo `sql/perguntas_negocio.sql`.
+
+Dashboard: 
+O dashboard foi desenvolvido no Power BI, apresentando indicadores principais, análise por canal, evolução temporal e comportamento das transações.
+
+Como executar: 
+1. Executar os scripts ETL
+2. Gerar o banco de dados SQLite
+3. Abrir o arquivo Power BI (.pbix)
