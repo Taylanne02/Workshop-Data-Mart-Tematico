@@ -134,6 +134,7 @@ Tecnologias:
 - Python
 - SQLite
 - Power BI
+- Supabase
 
 Modelo Dimensional: 
 O modelo segue o padrão Star Schema.
