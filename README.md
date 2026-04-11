@@ -1,9 +1,6 @@
 # ✒️ Workshop Data Mart de Transações de Cartões de Crédito
 
 
-## 📖 Descrição
-
-
 # Integrantes
 
 * **Marcus Tavares Pires**
