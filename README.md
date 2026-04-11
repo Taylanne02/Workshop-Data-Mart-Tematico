@@ -65,6 +65,7 @@ O script vai extrair, transformar e carregar os dados do CSV para o banco.
 * **Yara Fernandes Ribeiro**
     * Criação da develop
     * Organização do README
+    * Organização do supabase e conexão dele com o código e com o Power bi 
 
 ------------------------------
 
@@ -72,7 +73,7 @@ O script vai extrair, transformar e carregar os dados do CSV para o banco.
 * **Yngrid Guimarães Silva**  
     * Criação das perguntas
     * Organização power bi
-    * Encrementação README
+    * Encrementação e alterações README
 
 ------------------------------
 
