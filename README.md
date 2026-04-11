@@ -11,8 +11,6 @@
 * **Yara Fernandes Ribeiro**
 * **Yngrid Guimarães Silva**
 
-## 📂 Estrutura do Projeto
-
 ## 📦 Dependências necessárias
 
 Para instalar todas as dependências necessárias, execute:
