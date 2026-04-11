@@ -54,7 +54,7 @@ O modelo segue o padrão Star Schema.
 Cada registro representa uma transação realizada por um cliente em um determinado canal, data e estabelecimento.
 
 # ETL:
-O processo de ETL (Extract, Transform, Load) foi desenvolvido para transformar dados brutos de transações em um Data Mart estruturado, pronto para análise. Os dados foram carregados a partir de um arquivo CSV (df_bruto = pd.read_csv('dados_brutos_cartao.csv')), organizamos os dados em modelo dimensional, depois montamos a tabela fato (tabla principal) e fizemos o relacionamento de todos no modelo estrela, por fim os dados foram carregados em um banco relacional (sqlite3.connect('datamart_cartao.db')).
+O processo de ETL (Extract, Transform, Load) foi desenvolvido para transformar dados brutos de transações em um Data Mart estruturado, pronto para análise. Os dados foram carregados a partir de um arquivo CSV (df_bruto = pd.read_csv('dados_brutos_cartao.csv')), organizamos os dados em modelo dimensional, depois montamos a tabela fato (tabela principal) e fizemos o relacionamento de todos no modelo estrela, por fim os dados foram carregados em um banco relacional (sqlite3.connect('datamart_cartao.db')).
 
 
 # Perguntas de Negócio
