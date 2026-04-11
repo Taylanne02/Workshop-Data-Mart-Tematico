@@ -134,6 +134,7 @@ GROUP BY Dim_Cliente.cidade
 ORDER BY faturamento_total DESC;
 
 * **4. Qual categoria de loja gera mais faturamento?**
+  
 SELECT 
     Dim_Estabelecimento.categoria_loja, 
     SUM(valor_compra) AS faturamento_total
