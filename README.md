@@ -97,56 +97,6 @@ Pré-requisitos
 
 	5- No Navegador, selecione as tabelas desejadas (Fato_Transacoes, Dim_Cliente, etc.) e clique em Carregar.
 
-## 🧪 Perguntas de Negócio (Queries SQL Documentadas)
-
-* **1. Como o faturamento varia ao longo do tempo?**
-  
-SELECT 
-    data_compra, 
-    SUM(valor_compra) AS faturamento_total
-FROM Fato_Transacoes
-GROUP BY data_compra
-ORDER BY data_compra;
-
-* **2. Quais cidades concentram maior número de transações?**
-  
-SELECT 
-    Dim_Cliente.cidade, 
-    COUNT(*) AS qtd_transacoes
-FROM Fato_Transacoes
-JOIN Dim_Cliente 
-    ON Fato_Transacoes.id_cliente = Dim_Cliente.id_cliente
-GROUP BY Dim_Cliente.cidade
-ORDER BY qtd_transacoes DESC;
-
-* **3. Quais cidades geram maior faturamento?**
-  
-SELECT 
-    Dim_Cliente.cidade, 
-    SUM(valor_compra) AS faturamento_total
-FROM Fato_Transacoes
-JOIN Dim_Cliente 
-    ON Fato_Transacoes.id_cliente = Dim_Cliente.id_cliente
-GROUP BY Dim_Cliente.cidade
-ORDER BY faturamento_total DESC;
-
-* **4. Qual categoria de loja gera mais faturamento?**
-  
-SELECT 
-    Dim_Estabelecimento.categoria_loja, 
-    SUM(valor_compra) AS faturamento_total
-FROM Fato_Transacoes
-JOIN Dim_Estabelecimento 
-    ON Fato_Transacoes.id_estabelecimento = Dim_Estabelecimento.id_estabelecimento
-GROUP BY Dim_Estabelecimento.categoria_loja
-ORDER BY faturamento_total DESC;
-
-* **5. Qual o valor médio das compras (ticket médio)?**
-  
-SELECT 
-    AVG(valor_compra) AS ticket_medio
-FROM Fato_Transacoes;
-
 ## 👥 Desenvolvedores e suas Contribuições
 
 * **Marcus Tavares Pires**
